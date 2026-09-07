@@ -1,14 +1,4 @@
-# Reflexion + Verifier — minimal project
-
-A trimmed fork of [noahshinn/reflexion](https://github.com/noahshinn/reflexion)
-(MIT licensed — see original repo for full license/citation), kept to just
-the Python programming-benchmark path, with:
-- OpenAI swapped for the **Gemini API** (free tier)
-- A **Verifier Agent** gating which self-reflections get reused
-
-Everything unrelated (Rust support, LeetCode execution, HuggingFace local
-models, AlfWorld/HotPotQA experiments, the original repo's many `root/`
-result logs) has been removed to keep this lean.
+# Reflexion + Verifier 
 
 ## Structure
 
@@ -64,16 +54,4 @@ Both write to `root/<run_name>/*.jsonl`. Each row includes `is_solved`,
 whether it was kept), which is what your report's cost/accuracy/ablation
 metrics get computed from.
 
-## What's different from the original repo
-
-| | Original | This project |
-|---|---|---|
-| Model | OpenAI GPT-4 | Gemini (free tier) |
-| Languages | Python + Rust | Python only |
-| Strategies | simple, reflexion, reflexion-ucs, immediate-*, test-acc | simple, reflexion |
-| Memory | flat list, everything trusted | flat list, **verifier-gated** |
-| Local models | StarChat, CodeLlama (needs torch) | removed |
-
-Vector-based (BGE-M3 + Qdrant) episodic memory is a deliberate next stage,
-not included here — see project discussion for why that's built on top of
-this once the verifier alone is validated.
+#
